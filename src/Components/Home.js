@@ -5,7 +5,7 @@ export default class Home extends Component {
         return (
             <div style={{ padding: "5%", textAlign: "center" }}>
                 <h1>Home</h1>
-                <img src="/public/images/home.png" style={{ width: "150px", height: "150px" }} />
+                <img src='../../public/images/home.png' style={{ width: "150px", height: "150px" }} />
             </div>
         )
     }

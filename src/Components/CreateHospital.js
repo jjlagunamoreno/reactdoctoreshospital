@@ -11,6 +11,27 @@ export default class CreateHospital extends Component {
 
     insertHospital = (e) => {
         e.preventDefault();
+        let request = "webresources/hospitales/post"
+        let url = Global.apiHospitales + request;
+        //DEBEMOS RESPETAR LOS TIPOS DE DATOS DEL SERVICIO
+        let id = parseInt(this.cajaId.current.value);
+        let nombre = this.cajaNombre.current.value;
+        let direccion = this.cajaDireccion.current.value;
+        let telefono = this.cajaTelefono.current.value;
+        let camas = parseInt(this.cajaCamas.current.value);
+        //NECESITAMOS UN OBJETO React CON EL MISMO NOMBRE DE PROPIEDADES QUE EL SERVICIO
+        let hospital = {
+            idhospital: id,
+            nombre: nombre,
+            direccion: direccion,
+            telefono: telefono,
+            camas: camas
+        }
+        axios.post(url, hospital).then(response => {
+            this.setState({
+                mensaje: "Hospital inseretado: " + nombre
+            })
+        })
     }
     state = {
         mensaje: ""

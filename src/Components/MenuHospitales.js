@@ -25,7 +25,7 @@ export default class MenuHospitales extends Component {
             <div>
                 <nav className="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="Third navbar example">
                     <div className="container-fluid">
-                        <a className="navbar-brand" href="#">Hospitales</a>
+                        <NavLink className="navbar-brand" to="/hospitales">Hospitales</NavLink>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
                         </button>
