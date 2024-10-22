@@ -35,7 +35,7 @@ export default class Doctores extends Component {
     }
     render() {
         return (
-            <div>
+            <div style={{ padding: "5%" }}>
                 <h2>Doctores del hospital:
                     <span style={{ color: "red" }}>
                         {this.props.idhospital}
