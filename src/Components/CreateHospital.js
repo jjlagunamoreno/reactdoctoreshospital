@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Global from './Global'
 import axios from 'axios'
+import { Navigate } from 'react-router-dom'; //importamos navegar para cambiar de ruta con el estado al subir el hospital
 
 export default class CreateHospital extends Component {
     cajaId = React.createRef();
@@ -29,16 +30,23 @@ export default class CreateHospital extends Component {
         }
         axios.post(url, hospital).then(response => {
             this.setState({
-                mensaje: "Hospital inseretado: " + nombre
+                mensaje: "Hospital inseretado: " + nombre,
+                status: true //con esta variable le damos el status a true para que pinte el nuevo componente
             })
         })
     }
     state = {
-        mensaje: ""
+        mensaje: "",
+        status: false //declaramos la variable para el status de si el componente nuevo no está pintado de momento
     }
     render() {
         return (
             <div style={{ padding: "5%" }}>
+                {/* si la variable es true entonces pintamos el componente importado */}
+                {
+                    this.state.status == true &&
+                    (<Navigate to="/hospitales" />)
+                }
                 <h1>New Hospital</h1>
                 <h2 style={{ color: 'blue' }}>{this.state.mensaje}</h2>
                 <hr />

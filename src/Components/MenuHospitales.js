@@ -41,7 +41,7 @@ export default class MenuHospitales extends Component {
                                     <a className="nav-link disabled" aria-disabled="true">Disabled</a>
                                 </li>
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                                    <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Hospitales</a>
                                     <ul className="dropdown-menu">
                                         {
                                             this.state.hospitales.map((hospital, index) => {
